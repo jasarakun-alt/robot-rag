@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotek — pomočnik za robotiko</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">🤖</div>
+      <div class="header-text">
+        <h1>Robotek</h1>
+        <p>Tvoj pomočnik za senzorje, motorje, baterije, varnost in programiranje.</p>
+      </div>
+      <span class="badge"><span class="dot"></span> na podlagi priročnika</span>
+    </header>
+
+    <div class="controls">
+      <label>Model
+        <select id="model"></select>
+      </label>
+      <label>Jezik
+        <select id="language"></select>
+      </label>
+      <input id="otherLang" class="hidden" placeholder="napiši jezik (npr. japonščina)" />
+      <button id="speaker" class="toggle" type="button" title="Beri odgovore na glas">🔊 Glas izklopljen</button>
+    </div>
+
+    <div id="chat" class="chat">
+      <div class="msg bot">
+        <div class="avatar">🤖</div>
+        <div class="bubble">
+          Živjo! Sem <b>Robotek</b>. Odgovarjam samo na podlagi priročnika. Izberi model in
+          jezik, postavi vprašanje (lahko tudi z mikrofonom 🎤) ali klikni enega od predlogov.
+        </div>
+      </div>
+    </div>
+
+    <div id="suggestions" class="suggestions"></div>
+
+    <form id="form" class="composer">
+      <button id="mic" type="button" title="Govori vprašanje">🎤</button>
+      <input id="input" type="text" placeholder="Vpiši vprašanje…" autocomplete="off" />
+      <button id="send" type="submit" title="Pošlji">➤</button>
+    </form>
+  </div>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-video" id="overlayVideo"></div>
+    <div class="overlay-scrim"></div>
+    <div class="overlay-card">
+      <div class="overlay-title" id="overlayTitle">Razmišljam…</div>
+      <div class="overlay-caption" id="overlayCaption"></div>
+      <div class="overlay-hint">Veliki modeli rabijo dlje — med čakanjem nekaj namigov o robotiki 👇</div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
