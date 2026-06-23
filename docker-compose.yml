@@ -1,0 +1,44 @@
+services:
+  embedding:
+    build: ./services/embedding
+    environment:
+      - EMBEDDING_BACKEND=${EMBEDDING_BACKEND:-sentence-transformers}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-intfloat/multilingual-e5-small}
+    ports:
+      - "8001:8001"
+
+  retrieval:
+    build: ./services/retrieval
+    environment:
+      - EMBEDDING_SERVICE_URL=http://embedding:8001
+      - TOP_K=${TOP_K:-3}
+      - MANUAL_PATH=/app/data/prirocnik.md
+    volumes:
+      - ./data:/app/data:ro
+    depends_on:
+      - embedding
+    ports:
+      - "8002:8002"
+
+  llm:
+    build: ./services/llm
+    environment:
+      # Ollama teče na gostitelju (ne v dockerju)
+      - OLLAMA_BASE_URL=${OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      - LLM_MODEL=${LLM_MODEL:-qwen2.5:14b}
+      - LLM_TEMPERATURE=${LLM_TEMPERATURE:-0.1}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8003:8003"
+
+  gateway:
+    build: ./services/gateway
+    environment:
+      - RETRIEVAL_SERVICE_URL=http://retrieval:8002
+      - LLM_SERVICE_URL=http://llm:8003
+    depends_on:
+      - retrieval
+      - llm
+    ports:
+      - "8000:8000"

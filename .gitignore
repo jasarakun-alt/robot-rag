@@ -8,3 +8,6 @@ logs/
 run/
 *.log
 .DS_Store
+
+# osebne opombe za zagovor (ostanejo lokalno, ne v repo)
+docs/
