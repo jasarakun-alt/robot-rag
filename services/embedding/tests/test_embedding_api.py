@@ -1,4 +1,4 @@
-"""TDD: testi za /embed API. Uporabljamo hash backend (brez torch)."""
+"""/embed API. Uporabljamo hash backend (brez torch)."""
 from __future__ import annotations
 
 import os

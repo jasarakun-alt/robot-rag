@@ -1,4 +1,4 @@
-"""TDD: sestava prompta (samo-iz-konteksta, jezik) in prevajanje."""
+"""Sestava prompta (samo-iz-konteksta, jezik) in prevajanje."""
 from __future__ import annotations
 
 from prompt import build_messages, build_translation_messages

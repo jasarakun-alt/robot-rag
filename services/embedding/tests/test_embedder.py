@@ -1,4 +1,4 @@
-"""TDD: testi za embedder (logika vektorizacije). Pisani PRED implementacijo."""
+"""Embedder: logika vektorizacije."""
 from __future__ import annotations
 
 import math

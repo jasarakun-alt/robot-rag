@@ -9,5 +9,5 @@ run/
 *.log
 .DS_Store
 
-# osebne opombe za zagovor (ostanejo lokalno, ne v repo)
+# notranja dokumentacija (lokalno)
 docs/

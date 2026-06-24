@@ -1,4 +1,4 @@
-"""TDD: /search in /health API. Store prednastavimo z lokalnim embedderjem (brez omrežja)."""
+"""/search in /health API. Store prednastavimo z lokalnim embedderjem (brez omrežja)."""
 from __future__ import annotations
 
 import hashlib

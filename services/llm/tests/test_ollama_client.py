@@ -1,4 +1,4 @@
-"""TDD: čiste funkcije Ollama klienta – payload, parsanje odgovora, parsanje modelov."""
+"""Ollama klient: payload, parsanje odgovora, parsanje modelov."""
 from __future__ import annotations
 
 import pytest

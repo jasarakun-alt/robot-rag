@@ -1,4 +1,4 @@
-"""TDD: chunking priročnika + kosinusno iskanje. Pisani PRED implementacijo."""
+"""Chunking priročnika in kosinusno iskanje."""
 from __future__ import annotations
 
 import hashlib

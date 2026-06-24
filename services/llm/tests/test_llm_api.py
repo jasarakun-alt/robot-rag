@@ -1,4 +1,4 @@
-"""TDD: /generate (+model/language), /translate, /models. Ollama klic je mockiran."""
+"""/generate (+model/language), /translate, /models. Ollama klic je mockiran."""
 from __future__ import annotations
 
 from fastapi.testclient import TestClient

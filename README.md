@@ -4,8 +4,8 @@ Spletni pomočnik, ki učencem odgovarja na vprašanja o robotiki **izključno n
 priročnika** (RAG). Če odgovora v priročniku ni, to pošteno pove in predlaga, naj
 vprašajo učitelja. Pod vsakim odgovorom prikaže **uporabljene vire (kontekst)**.
 
-Zgrajeno kot **4 mikrostoritve** (FastAPI), ki se povezujejo med sabo, z razvojem
-po **TDD** (testi pred vsako komponento). LLM teče **lokalno prek Ollame**.
+Zgrajeno kot **4 mikrostoritve** (FastAPI), ki se povezujejo med sabo, z testi
+za vsako komponento. LLM teče **lokalno prek Ollame**.
 
 ## Arhitektura
 
@@ -59,15 +59,14 @@ docker compose up --build
 # Ollama teče na GOSTITELJU; compose ga doseže prek host.docker.internal
 ```
 
-## Testi (TDD)
+## Testi
 
 ```bash
 .venv/bin/pytest -q       # 35 testov (embedding 9, retrieval 11, llm 11, gateway 4)
 ```
 
-Vsaka mikrostoritev ima teste, pisane **pred** implementacijo (rdeča → zelena):
-chunking, kosinusno iskanje, sestava prompta (samo-iz-konteksta + zavrnitev),
-parsanje Ollama odgovora, orkestracija gatewaya (z mockiranimi klici).
+Pokrivajo chunking, kosinusno iskanje, sestavo prompta (samo-iz-konteksta + zavrnitev),
+parsanje Ollama odgovora in orkestracijo gatewaya (z mockiranimi klici).
 
 ## API (gateway)
 

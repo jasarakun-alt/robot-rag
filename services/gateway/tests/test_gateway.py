@@ -1,4 +1,4 @@
-"""TDD: gateway orkestracija /ask (+model/jezik/pivot), /models, /faq, /health."""
+"""Gateway: orkestracija /ask (+model/jezik/pivot), /models, /faq, /health."""
 from __future__ import annotations
 
 from fastapi.testclient import TestClient
