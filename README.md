@@ -43,14 +43,14 @@ Pretok zahteve: brskalnik → gateway → retrieval (→ embedding → indeks) �
 ## Hiter zagon (lokalno, brez dockerja)
 
 ```bash
-./run_local.sh            # realni embeddingi (sentence-transformers, večjezični)
-LIGHT=1 ./run_local.sh    # hash embeddingi (brez torch, hiter zagon)
-# odpri http://localhost:8000
-./stop_local.sh
+python3 run.py            # realni embeddingi (sentence-transformers, večjezični)
+python3 run.py --light    # hash embeddingi (brez torch, hiter zagon)
+# odpri http://localhost:8000  ·  ustavi s Ctrl+C
 ```
 
-Skripta ustvari `.venv`, namesti odvisnosti, po potrebi zažene `ollama serve`
-in zažene vse 4 storitve (logi v `logs/`).
+`run.py` ustvari `.venv`, namesti vse odvisnosti, po potrebi zažene `ollama serve`
+in naloži manjkajoči model, nato zažene vse 4 storitve (logi v `logs/`) ter počaka,
+da so pripravljene. `Ctrl+C` čisto ustavi vse.
 
 ## Zagon z Dockerjem
 
