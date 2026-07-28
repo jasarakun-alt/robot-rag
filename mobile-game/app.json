@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "Robot Runner",
+    "slug": "robot-runner",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#0b1026",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.robotrunner"
+    },
+    "android": {
+      "package": "com.example.robotrunner",
+      "adaptiveIcon": {
+        "backgroundColor": "#0b1026"
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
